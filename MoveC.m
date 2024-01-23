@@ -52,21 +52,21 @@ function MoveC(x_b,y_b,z_b,x_c,y_c,z_c,v_qd)
     i0  = [1 0 0];
     j0  = [0 1 0];
     k0  = [0 0 1];
-
+    
     Ox1 = [x_a-x_o, y_a-y_o , z_a-z_o];
     Oz1 = cross([x_a-x_o, y_a-y_o , z_a-z_o],[x_b-x_o, y_b-y_o , z_b-z_o]);
     if(fix(cross([x_a-x_o, y_a-y_o , z_a-z_o],[x_b-x_o, y_b-y_o , z_b-z_o]))==0)
         Oz1 = cross([x_a-x_o, y_a-y_o , z_a-z_o],[x_c-x_o, y_c-y_o , z_c-z_o]);
     end
     Oy1 = cross(Oz1,Ox1);
-
+    
     i1  = Ox1/sqrt(Ox1(1,1)^2 + Ox1(1,2)^2 + Ox1(1,3)^2);
     j1  = Oy1/sqrt(Oy1(1,1)^2 + Oy1(1,2)^2 + Oy1(1,3)^2);
     k1  = Oz1/sqrt(Oz1(1,1)^2 + Oz1(1,2)^2 + Oz1(1,3)^2);
 
-    R10 = [ i0*i1', i0*j1', i0*k1';
-        j0*i1', j0*j1', j0*k1';
-        k0*i1', k0*j1', k0*k1'];
+    R10 = [    i0*i1', i0*j1', i0*k1';
+                    j0*i1', j0*j1', j0*k1';
+                    k0*i1', k0*j1', k0*k1'];
 
     H10 = [R10, [x_o; y_o; z_o];
         0 0 0 1];
