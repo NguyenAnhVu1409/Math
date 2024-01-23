@@ -1,12 +1,7 @@
 function MoveC(x_b,y_b,z_b,x_c,y_c,z_c,v_qd)
     %% Lay bien khop hien tai
     theta1=getappdata(0,'theta1_old');
-    theta2=getappdata(0,'theta2_old');
-    d=getappdata(0,'d_old');
-    Error_old=getappdata(0,'Error_old');
-    WP=getappdata(0,'WP');
-    WP=WP+1;
-    setappdata(0, 'WP', WP);
+         setappdata(0, 'WP', WP);
     if(Error_old==1)
         return;
     end
